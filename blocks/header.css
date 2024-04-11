@@ -1,0 +1,28 @@
+.header {
+  max-width: 880px;
+}
+
+.header__image {
+  margin: 45px 0 41px;
+  width: 173px;
+  height: 33px;
+  color: #fff;
+}
+
+.header__image:hover {
+  transition: color 0.3s ease-in;
+  cursor: url(../images/handCursor.svg), pointer;
+  color: blue;
+}
+
+.header {
+  margin-top: 45px;
+  border-bottom: solid 1px #545454;
+}
+
+@media screen and (max-width: 770px) {
+  .header {
+    margin-top: 28px;
+    margin-left: 27px;
+  }
+}

@@ -13,7 +13,7 @@
 
 .header__image:hover {
   transition: color 0.3s ease-in;
-  cursor: url(../images/handCursor.svg), pointer;
+  cursor: pointer;
   color: blue;
 }
 

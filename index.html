@@ -27,7 +27,9 @@
           <img src="./images/Avatar.png" alt="Avatar" class="profile__image" />
           <div class="profile__info">
             <h1 class="profile__title">Jacques Cousteau</h1>
-            <button class="profile__edit-button" type="button"></button>
+            <button class="profile__edit-button"
+             id="profile-edit-button" 
+             type="button"></button>
             <p class="profile__description">Explorer</p>
           </div>
           <button class="profile__add-button" type="button"></button>
@@ -108,7 +110,7 @@
         <p class="footer__copyright">© 2022 Around The U.S.</p>
       </footer>
     </div>
-    <div class="modal">
+    <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
         <button
           class="modal__close"
@@ -116,7 +118,7 @@
           type="button"
         ></button>
         <h2 class="modal__heading">Edit Profile</h2>
-        <form name="modal" class="modal__form">
+        <form name="modal" class="modal__form" >
           <input
             type="text"
             name="title"

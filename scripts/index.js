@@ -1,3 +1,7 @@
+/* -------------------------------------------------------------------------- */
+/*                                  Card Data                                 */
+/* -------------------------------------------------------------------------- */
+
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -25,7 +29,10 @@ const initialCards = [
   },
 ];
 
-// Elements
+/* -------------------------------------------------------------------------- */
+/*                                  Elements                                  */
+/* -------------------------------------------------------------------------- */
+
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileCloseButton = document.querySelector("#modal-close-button");
@@ -39,7 +46,9 @@ const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 const cardListEl = document.querySelector(".cards__list");
 
-// Functions
+ /* -------------------------------------------------------------------------- */
+ /*                                  Functions                                 */
+ /* -------------------------------------------------------------------------- */
 
 function closePopup() {
   profileEditModal.classList.remove("modal_opened");
@@ -57,7 +66,9 @@ function getCardElement(cardData) {
   return cardElement;
 }
 
-// Event Handlers
+/* -------------------------------------------------------------------------- */
+/*                               Event Handlers                               */
+/* -------------------------------------------------------------------------- */
 
 function handleProfileEditSubmit(e) {
   e.preventDefault();
@@ -66,7 +77,9 @@ function handleProfileEditSubmit(e) {
   closePopup();
 }
 
-// Event Listeners
+/* -------------------------------------------------------------------------- */
+/*                               Event Listeners                              */
+/* -------------------------------------------------------------------------- */
 
 profileEditButton.addEventListener("click", () => {
   profileNameInput.value = profileName.textContent;

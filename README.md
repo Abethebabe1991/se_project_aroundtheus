@@ -7,6 +7,14 @@ This project is a summary of skills learned in Sprint 3, in this project we feat
 
 This project really hammers home the Dev Tools in Firefox and Google Chrome, the use of these two browser inspectors helped to find the pixel-perfect solutions to the code and issues.
 
+During the development of this page, I was tasked with adding Javascript functionality. This was by far the biggest challenge yet, but so satisfying to see the moving parts of an active webpage working together.
+
+For webpages I hope to design in the future, the process of designing this page gave me tools for thinking about aspects that are must-haves for future projects:
+
+1. Well-designed forms that save and clear information depending on their function.
+2. Smooth transitions and stable design practices to keep objects on the page in place.
+3. Consistency in all aspects of the page and not comprimising for half-baked solutions.
+
 Link to Video: https://drive.google.com/file/d/1JH3626BIlyTJWg8vn9OMFl558p4fHrdT/view?usp=sharing
 
 Link to webpage: https://abethebabe1991.github.io/se_project_aroundtheus/

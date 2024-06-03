@@ -1,4 +1,4 @@
-.popup {
+.modal__preview-image {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,7 +14,7 @@
     transition: opacity 0.3s;
   }
   
-  .popup__content {
+  .modal__content {
     background: transparent;
     padding: 0px;
     position: relative;
@@ -24,20 +24,20 @@
     
   }
   
-  .popup__preview-image {
+  .modal__image {
     max-width: 75vw;
     max-height: 75vh;
     object-fit: cover;
     cursor: pointer;
   }
   
-  .popup_is-opened {
+  .modal_is-opened {
     visibility: visible;
     pointer-events: auto;
     opacity: 1;
   }
   
-  .popup__close {
+  .modal__close {
     position: absolute;
     bottom: calc(100% + 5px);
     left: calc(100% + 5px);
@@ -50,7 +50,7 @@
     background-repeat: no-repeat;
   }
   
-  .popup__caption {
+  .modal__caption {
     margin-top: 10px;
     font-size: 16px;
     color: #fff;

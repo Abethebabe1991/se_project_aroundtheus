@@ -33,6 +33,10 @@
   text-overflow: ellipsis;
 }
 
+.profile__name-input-error {
+  
+}
+
 .profile__edit-button {
   background: transparent url(../images/pen-icon.svg) center no-repeat;
   width: 24px;

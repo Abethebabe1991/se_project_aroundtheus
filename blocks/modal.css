@@ -81,7 +81,7 @@
 
 .modal__form-input:last-of-type {
   margin-bottom: 0;
-  margin-top: 13px;
+  margin-top: 25px;
 }
 
 .modal__input-error {
@@ -92,6 +92,12 @@
   transition: opacity 0.3s;
   position: absolute;
   left: 0;
+  
+}
+
+.modal__error-visible {
+opacity: 1;
+margin-left: 36px;
 }
 
 .modal__button {
@@ -103,6 +109,11 @@
   cursor: pointer;
   margin-top: 48px;
   border: none;
+}
+
+.modal__button_disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
 }
 
 .modal__save:hover {
@@ -162,7 +173,7 @@
 
   .modal__form-input {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     padding-bottom: 5px;
   }
 
@@ -178,4 +189,12 @@
     margin: 0;
     width: 100%;
   }
+
+  .modal__button {
+
+    width: 238px;
+  
+  }
+  
 }
+

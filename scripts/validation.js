@@ -1,7 +1,5 @@
 // Function to close the modal
-function closeModal(modal) {
-    modal.classList.remove('modal_opened');
-}
+
 
 function handleKeyDown(event, modalSelector) {
     if (event.key === 'Escape') {
@@ -15,7 +13,7 @@ function handleKeyDown(event, modalSelector) {
 }
 
 function enableEscapeKeyClose(modalSelector) {
-    document.addEventListener('keydown', (event) => handleKeyDown(event, modalSelector));
+    document.addEventListener('esc', (event) => handleKeyDown(event, modalSelector));
 }
 
 enableEscapeKeyClose('.modal');
@@ -122,7 +120,7 @@ const config = {
     inputSelector: ".modal__form-input",
     submitButtonSelector: ".modal__button",
     inactiveButtonClass: "modal__button_disabled",
-    inputErrorClass: "modal__input_type_error",
+    inputErrorClass: "modal__form-input_error",
     errorClass: "modal__error-visible"
 };
 

@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const previewModalCaption = document.querySelector("#modal-caption");
 
   const profileFormElement = editProfileModal.querySelector("#edit-profile-modal-form");
-  const addCardFormElement = addCardModal.querySelector("#add-card-modal-form");
+  const addCardFormElement = addCardModal.querySelector("#add-card-modal");
 
   const cardTitleInput = addCardFormElement.querySelector(".modal__input_type_title");
   const cardUrlInput = addCardFormElement.querySelector(".modal__input_type_url");

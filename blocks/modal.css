@@ -19,7 +19,7 @@
   transition: opacity 0.4s;
 }
 
-.modal__preview-image {
+.modal_type_preview-image {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,20 +84,15 @@
   margin-top: 25px;
 }
 
-.modal__input-error {
-  color: red;
-  font-size: 12px;
-  line-height: 1.2;
-  opacity: 0;
-  transition: opacity 0.3s;
-  position: absolute;
-  left: 0;
-  
-}
-
 .modal__error-visible {
 opacity: 1;
 margin-left: 36px;
+color: red;
+font-size: 12px;
+line-height: 1.2;
+transition: opacity 0.3s;
+position: absolute;
+left: 0;
 }
 
 .modal__button {

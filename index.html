@@ -67,7 +67,7 @@
             required
           />
 
-          <span class="modal__input-error" id = "name-input-error"></span>
+          <span class="modal__form-input_error" id = "name-input-error"></span>
           <input
             type="text"
             name="description"
@@ -78,7 +78,7 @@
             minlength="2"
             required
           />
-          <span class="modal__input-error" id="title-input-error"></span>
+          <span class="modal__form-input_error" id="title-input-error"></span>
           <button class="modal__button modal__button_disabled" type="submit">Save</button>
         </form>
       </div>
@@ -98,15 +98,15 @@
           <input
             type="text"
             name="title"
-            class="modal__form-input modal__input_type_title"
+            class="modal__form-input modal__form-input_type_title"
             id="card-title-input"
             placeholder="Title"
             maxlength="30"
             minlength="1"
             required
-       
+  
           />
-          <span class="modal__input-error" id="card-title-input-error"></span>
+          <span class="modal__form-input_error" id="card-title-input-error"></span>
           <input
             type="url"
             name="url"
@@ -115,13 +115,13 @@
             placeholder="Image URL"
             required
           />
-          <span class="modal__input-error" id="url-input-error"></span>
+          <span class="modal__form-input_error" id="url-input-error"></span>
           <button class="modal__button modal__button_disabled" type="submit" disabled>Create</button>
         </form>
       </div>
     </div>
 
-    <div class="modal__preview-image modal" id="modal-preview-image">
+    <div class="modal_type_preview-image modal" id="modal-preview-image">
       <div class="modal__content">
         <button class="modal__close" id="modal-preview-close" type="button"></button>
         <img class="modal__image" id="modal-image" src="" alt="" />

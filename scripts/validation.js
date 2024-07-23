@@ -1,35 +1,13 @@
-// Function to close the modal
-
-
-function handleKeyDown(event, modalSelector) {
-    if (event.key === 'Escape') {
-        const modals = document.querySelectorAll(modalSelector);
-        modals.forEach(modal => {
-            if (modal.classList.contains('modal_opened')) {
-                closeModal(modal); 
-            }
-        });
-    }
-}
-
-function enableEscapeKeyClose(modalSelector) {
-    document.addEventListener('esc', (event) => handleKeyDown(event, modalSelector));
-}
-
-enableEscapeKeyClose('.modal');
 
 // function to show errors in the inputs:
 
 function showInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
     const errorMessagesEl = formEl.querySelector(`#${inputEl.id}-error`);
-
     if (errorMessagesEl) {
         inputEl.classList.add(inputErrorClass);
         errorMessagesEl.textContent = inputEl.validationMessage || ''; 
         errorMessagesEl.classList.add(errorClass);
-    } else {
-  
-    }
+    } 
 }
 
 // function to hide errors once validation is completed

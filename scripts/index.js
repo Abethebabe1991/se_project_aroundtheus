@@ -1,11 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
   const initialCards = [
-    { name: "Yosemite Valley", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg" },
-    { name: "Lake Louise", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lake-louise.jpg" },
-    { name: "Bald Mountains", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/bald-mountains.jpg" },
-    { name: "Latemar", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/latemar.jpg" },
-    { name: "Vanoise National Park", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/vanoise.jpg" },
-    { name: "Lago di Braies", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg" },
+    {
+      name: "Yosemite Valley",
+      link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
+    },
+    {
+      name: "Lake Louise",
+      link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lake-louise.jpg",
+    },
+    {
+      name: "Bald Mountains",
+      link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/bald-mountains.jpg",
+    },
+    {
+      name: "Latemar",
+      link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/latemar.jpg",
+    },
+    {
+      name: "Vanoise National Park",
+      link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/vanoise.jpg",
+    },
+    {
+      name: "Lago di Braies",
+      link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
+    },
   ];
 
   const profileName = document.querySelector("#profile-name");
@@ -18,37 +36,65 @@ document.addEventListener("DOMContentLoaded", () => {
   const profileEditButton = document.querySelector("#profile-edit-button");
   const addNewCardButton = document.querySelector("#profile-add-button");
   const editProfileModal = document.querySelector("#edit-modal");
-  const profileModalCloseButton = editProfileModal.querySelector(".modal__close");
+  const profileModalCloseButton =
+    editProfileModal.querySelector(".modal__close");
 
-  const previewImageModalWindow = document.querySelector("#modal-preview-image");
+  const previewImageModalWindow = document.querySelector(
+    "#modal-preview-image"
+  );
   const previewModalImage = document.querySelector("#modal-image");
-  const previewModalCloseButton = document.querySelector("#modal-preview-close");
+  const previewModalCloseButton = document.querySelector(
+    "#modal-preview-close"
+  );
   const previewModalCaption = document.querySelector("#modal-caption");
 
-  const profileFormElement = editProfileModal.querySelector("#edit-profile-modal-form");
-  const addCardFormElement = addCardModal.querySelector("#add-card-modal");
+  const profileFormElement = editProfileModal.querySelector(
+    "#edit-profile-modal-form"
+  );
+  const addCardFormElement = addCardModal.querySelector("#add-card-modal-form");
 
-  const cardTitleInput = addCardFormElement.querySelector(".modal__input_type_title");
-  const cardUrlInput = addCardFormElement.querySelector(".modal__input_type_url");
+  const cardTitleInput = addCardFormElement.querySelector("#card-title-input");
+  const cardUrlInput = addCardFormElement.querySelector("#url-input");
 
-  const cardTemplate = document.querySelector("#card-template").content.firstElementChild;
+  const cardTemplate =
+    document.querySelector("#card-template").content.firstElementChild;
   const cardListEl = document.querySelector(".cards__list");
 
   function openModal(modal) {
     modal.classList.add("modal_opened");
-  
+
+    // Closing Modal with esc key
+    const handleEscClose = (event) => {
+      if (event.key === "Escape") {
+        closeModal(modal);
+      }
+    };
+
+    // Clicking outside the modal to close
+    const handleExternalClick = (event) => {
+      if (event.target === modal) {
+        closeModal(modal);
+      }
+    };
+
+    document.addEventListener("keydown", handleEscClose);
+    document.addEventListener("click", handleExternalClick);
+
+    // Identifiers to handle the esc close and external clicks
+    modal._handleEscClose = handleEscClose;
+    modal._handleExternalClick = handleExternalClick;
   }
 
   function closeModal(modal) {
     modal.classList.remove("modal_opened");
-  
+    document.removeEventListener("keydown", modal._handleEscClose);
+    document.removeEventListener("click", modal._handleExternalClick);
   }
 
   function renderCard(card, cardListEl) {
     const cardElement = getCardElement(card);
     cardListEl.prepend(cardElement);
   }
-
 
   function showPreview(card) {
     previewModalImage.src = card.link;
@@ -97,8 +143,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const name = cardTitleInput.value;
     const link = cardUrlInput.value;
     renderCard({ name, link }, cardListEl);
-    cardTitleInput.value = "";
-    cardUrlInput.value = "";
     addCardFormElement.reset();
     closeModal(addCardModal);
   }
@@ -109,17 +153,19 @@ document.addEventListener("DOMContentLoaded", () => {
     openModal(editProfileModal);
   });
 
-  profileModalCloseButton.addEventListener("click", () => {
-    closeModal(editProfileModal);
-  });
+  profileModalCloseButton.addEventListener("click", () =>
+    closeModal(editProfileModal)
+  );
 
-  addNewCardButton.addEventListener("click", () => {
-    openModal(addCardModal);
-  });
+  addNewCardButton.addEventListener("click", () => openModal(addCardModal));
 
-  addNewCardCloseButton.addEventListener("click", () => closeModal(addCardModal));
+  addNewCardCloseButton.addEventListener("click", () =>
+    closeModal(addCardModal)
+  );
 
-  previewModalCloseButton.addEventListener("click", () => closeModal(previewImageModalWindow));
+  previewModalCloseButton.addEventListener("click", () =>
+    closeModal(previewImageModalWindow)
+  );
 
   profileFormElement.addEventListener("submit", handleProfileEditSubmit);
   addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);

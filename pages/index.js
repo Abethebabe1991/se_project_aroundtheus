@@ -1,8 +1,7 @@
 import Card from "../components/card.js";
 import FormValidator from '../components/FormValidator.js';
 
-//This is the initial card data that is cloned
-
+// This is the initial card data that is cloned
 document.addEventListener("DOMContentLoaded", () => {
   const initialCards = [
     {
@@ -31,8 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   ];
 
-  //These grab the appropriate data to be used in our code from the HTML
-
+  // These grab the appropriate data to be used in our code from the HTML
   const profileName = document.querySelector("#profile-name");
   const profileTitle = document.querySelector("#profile-description");
   const profileNameInput = document.querySelector("#name-input");
@@ -47,6 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const previewModalImage = document.querySelector("#modal-image");
   const previewModalCaption = document.querySelector("#modal-caption");
 
+  // Fix for the close button
+  const previewModalCloseButton = previewImageModalWindow.querySelector(".modal__close");
+
   const profileFormElement = editProfileModal.querySelector("#edit-profile-modal-form");
   const addCardFormElement = addCardModal.querySelector("#add-card-modal-form");
 
@@ -56,8 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cardTemplate = document.querySelector("#card-template").content.firstElementChild;
   const cardListEl = document.querySelector(".cards__list");
 
-  //Standalone openModal function and close function
-
+  // Standalone openModal function and close function
   function openModal(modal) {
     modal.classList.add("modal_opened");
 
@@ -73,8 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-//Added logic to close the Modal boxes if clicked offscreen or esc is pressed
-
+    // Added logic to close the Modal boxes if clicked offscreen or esc is pressed
     document.addEventListener("keydown", handleEscClose);
     document.addEventListener("click", handleExternalClick);
 
@@ -88,15 +87,13 @@ document.addEventListener("DOMContentLoaded", () => {
     document.removeEventListener("click", modal._handleExternalClick);
   }
 
-//Loading card elements and prepending them to the list of cards to create all six cards
-
+  // Loading card elements and prepending them to the list of cards to create all six cards
   function renderCard(card, cardListEl) {
     const cardElement = getCardElement(card);
     cardListEl.prepend(cardElement);
   }
 
-  //When the image is clicked a preview appears
-
+  // When the image is clicked a preview appears
   function showPreview(card) {
     previewModalImage.src = card.link;
     previewModalImage.alt = card.name;
@@ -160,6 +157,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   editProfileModal.querySelector(".modal__close").addEventListener("click", () => closeModal(editProfileModal));
   addCardModal.querySelector(".modal__close").addEventListener("click", () => closeModal(addCardModal));
+  
+  // Fix for preview modal close button
   previewModalCloseButton.addEventListener("click", () => closeModal(previewImageModalWindow));
 
   profileFormElement.addEventListener("submit", handleProfileEditSubmit);

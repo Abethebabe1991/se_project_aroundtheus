@@ -6,6 +6,7 @@ export default class Card {
         this._handleImageClick = handleImageClick;
     }
 
+
     // Create the card element based on the template
     _getTemplate() {
         const cardElement = document
@@ -13,6 +14,7 @@ export default class Card {
             .content.cloneNode(true);
         return cardElement;
     }
+
 
     // Set up event listeners for like and delete actions
     _setEventListeners() {
@@ -23,10 +25,12 @@ export default class Card {
         });
     }
 
+
     // Toggle the like button active state
     _handleLikeIcon() {
         this._cardElement.querySelector('.card__like-button').classList.toggle('card__like-button_is-active');
     }
+
 
     // Handle the deletion of the card
     _handleDeleteIcon() {
@@ -34,16 +38,22 @@ export default class Card {
         this._cardElement = null; // Clean up the reference
     }
 
+
     // Main method to return the card view with populated data
     getView() {
         this._cardElement = this._getTemplate();
         this._setEventListeners();
+
 
         this._cardElement.querySelector('.card__title').textContent = this._name;
         const cardImage = this._cardElement.querySelector('.card__image');
         cardImage.src = this._link;
         cardImage.alt = this._name;
 
+
         return this._cardElement;
     }
 }
+
+
+
